@@ -1,0 +1,147 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+<title>koby's stuff</title>
+
+   <script>
+    var count = 0;
+
+    var kobysRandomStuff = {
+	    age:14,
+	    weight:"too much",
+	    name:"not koby",
+	    hobby:"sleep",
+	    struggles:"missionbit",
+	    importantSecret: function(){
+		     if (count < 5){
+			     console.log("TOO BAD, I LIED,  THERE ARE NO SECRETS");
+		     }      else {
+			     console.log("my secret is i have told many secrets")
+		     }
+		     count++;
+	     }
+     }
+
+
+    var thingsYouDontWantToKnow = function(){
+    	console.log(kobysRandomStuff.age);
+    }
+
+    var kuubyzstuff = function() {
+    	alert("kobys age is" + kobysRandomStuff.age);
+    	alert("kobys weight is" + kobysRandomStuff.weight);
+    	alert("kobys name is" + kobysRandomStuff.name);
+    	alert("kobys hobby is" + kobysRandomStuff.hobby);
+
+    }
+
+    var importantSecret= function(){
+    	var text = document.getElementById("changeMe");
+        if (count === 0)
+        text.style.fontsize = 300;
+        text.innerHTML = "NOTHING"
+        document.getElementsByTagName("body")[0].style.backgroundColor = "green";
+    }
+
+
+
+
+
+
+
+
+     //the follwing is not my work
+
+     
+     var mc;
+			var rpgCharacter = function (lvl, hp, mp, job) {
+				this.level = lvl;
+				this.hp = hp;
+				this.mp = mp;
+				this.job = job;
+			}
+			var changeStatus = function() {
+				document.getElementById("status").innerHTML = "You are a Level " + mc.level + " " + mc.job + " with " + mc.hp + " HP and " + mc.mp + " MP.";
+				if (mc.hp < 0) {
+					if (mc.job === "Warrior") {
+						document.getElementById("change").src = "http://www.videogamesprites.net/FinalFantasy6/Party/Sabin/Sabin%20-%20Dead.gif";
+					} else {
+						document.getElementById("change").src = "http://www.videogamesprites.net/FinalFantasy6/Party/Shadow/Shadow%20-%20Dead.gif";
+					}
+					document.getElementById("gameover").innerHTML = "You died :(";
+				}
+			}
+			var initialize = function() {
+				var choice = prompt("Would you like to be a WARRIOR or a THIEF?").toUpperCase();
+				if (choice === "WARRIOR") {
+					mc = new rpgCharacter(10, 150, 30, "Warrior");
+					document.getElementById("change").src = "http://www.videogamesprites.net/FinalFantasy6/Party/Sabin/Sabin%20-%20Battle.gif";
+				} else if (choice === "THIEF") {
+					mc = new rpgCharacter(10, 80, 30, "Thief");
+					document.getElementById("change").src = "http://www.videogamesprites.net/FinalFantasy6/Party/Shadow/Shadow%20-%20Battle.gif";
+				} else {
+					alert("Please choose either Warrior or Thief!");
+					return;
+				}
+				changeStatus();
+			}
+			var fight = function() {
+				var dmg = Math.floor(Math.random() * 31) + 20;
+				mc.hp = mc.hp - dmg;
+				changeDamage(dmg);
+				changeStatus();
+			}
+			var changeDamage = function(number) {
+				document.getElementById("damage").innerHTML = "You were hit for " + number + " damage!";
+			}
+
+
+
+
+
+
+
+
+
+
+   </script>
+
+
+
+
+
+
+</head>
+
+<body>
+
+<button onclick = "thingsYouDontWantToKnow()">press me</button>
+
+
+
+
+
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
+
+
+
+
+
